@@ -3,6 +3,7 @@ Un Downloader Per mangaworld.cc,
 progetto a scopo didattico non affiliato a mangaworld.cc, non sono responsabile dell'utilizzo e delle immagini hostate su mangaworld.cc
 
 [EN Translation](README.md)
+[DE Translation](README_DE.md)
 
 # Features
 - Download di manga interi o singoli capitoli
