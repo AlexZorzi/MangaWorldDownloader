@@ -2,7 +2,7 @@
 Un Downloader Per mangaworld.cc,
 progetto a scopo didattico non affiliato a mangaworld.cc, non sono responsabile dell'utilizzo e delle immagini hostate su mangaworld.cc
 
-[EN Translation]("https://github.com/AlexZorzi/MangaWorldDownloader/blob/master/README.md")
+[EN Translation](README.md)
 
 # Features
 - Download di manga interi o singoli capitoli
