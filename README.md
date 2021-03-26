@@ -1,25 +1,27 @@
-# MangaWorld Downloader
-Un Downloader Per mangaworld.cc,
-progetto a scopo didattico non affiliato a mangaworld.cc, non sono responsabile dell'utilizzo e delle immagini hostate su mangaworld.cc
+# MangaWorld Downloader 
+A Downloader For mangaworld.cc,
+a project for educational purposes not affiliated with mangaworld.cc, I am not responsible for the use and images hosted on mangaworld.cc
+
+[IT Translation]("https://github.com/AlexZorzi/MangaWorldDownloader/blob/master/README_IT.md")
 
 # Features
-- Download di manga interi o singoli capitoli
-- MultiThreaded Download per scaricare le pagine alla massima velocità
-- Download della Preview
+- Download of whole manga or single chapters
+- MultiThreaded Download for downloading pages at maximum speed
+- Preview Download
 
-# In caso di un CloudFlare captcha
-Per passare il blocco il programma avrà bisogno del cookie cf_clearance e dell'useragent del browser che avete utilzzato per risolvere il captcha
+# In case of a CloudFlare captcha
+To pass the block the program needs the cf_clearance cookie and the useragent of the browser you used to solve the captcha
 
-- Token: Risolvete il captcha su www.mangaworld.cc e in Dev Console prendete il valore del cookie cf_clearance 
+- Token: Solve the captcha on www.mangaworld.cc and in Dev Console get the value of the cf_clearance cookie
   ![Token](https://i.imgur.com/HYUu0M0.png)
-  
-- UserAgent: Al sito www.whatsmyua.info è possibile vedere il proprio useragent
-  ![Useragent](https://i.imgur.com/nZZfCt1.png)
-  
-il programma vi chiederà in automatico questi due parametri se ne avrà bisogno, poi li salverà in automatico in un file JSON così da poterli utilizzare 
-anche dopo che il programma è stato chiuso.
 
-Manualmente: è possibile inserire manualmente i valori in un file chiamato `cred.json` con questa struttura nella stessa cartella dell'eseguibile
+- UserAgent: At www.whatsmyua.info you can see your useragent
+  ![Useragent](https://i.imgur.com/nZZfCt1.png)
+
+the program will automatically ask you for these two parameters if it needs them, then it will automatically save them in a JSON file so you can use them
+even after the program has been closed.
+
+Manually: you can manually enter the values in a file called `cred.json` with this structure in the same folder as the executable
 
 ```
 {
@@ -27,3 +29,4 @@ Manualmente: è possibile inserire manualmente i valori in un file chiamato `cre
 "cf_clearance" : "cf_clearance value here"
 }
 ```
+
