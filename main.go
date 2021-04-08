@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"os"
+	"runtime"
 	"strconv"
 	"strings"
 	"sync"
@@ -20,13 +21,6 @@ var PROXY []string
 var LATESTMANGAIdLink int64
 
 // COOKIE needs only cf_clearance
-/*
-	method:
-			0 database Full sync
-			1 single sync
-			2 telegram event listener
-
-*/
 func main() {
 	//SyncProxyList()
 	//ChangeProxy()
@@ -35,7 +29,7 @@ func main() {
 	fmt.Println("##################################################")
 	fmt.Println("#            MangaWorld Downloader               #")
 	fmt.Println("#                                                #")
-	fmt.Println("#            Version: 1.0                        #")
+	fmt.Println("#            Version: 1.1                        #")
 	fmt.Println("#            Latest Update: 26/03/2021           #")
 	fmt.Println("#                                                #")
 	fmt.Println("##################################################")
@@ -43,11 +37,11 @@ func main() {
 	WG.Wait()
 }
 
-func getCred(){
+func getCred() {
 
 	code, err := GetWebPage("https://www.mangaworld.cc/")
-	if(err == nil){
-		if(code.StatusCode == 200){
+	if err == nil {
+		if code.StatusCode == 200 {
 			return
 		}
 	}
@@ -57,7 +51,7 @@ func getCred(){
 		json.Unmarshal(data, &cred)
 		COOKIE = cred.Clearance
 		USERAGENT = cred.Useragent
-	}else {
+	} else {
 		fmt.Println("The file cred.json dosen't exist!, creating one...")
 		ChangeCookie()
 		ChangeUserAgent()
@@ -65,11 +59,27 @@ func getCred(){
 	}
 }
 
-func single() {
+func askinput() string {
+	SEP := "\n"
+	BIT_SEP := '\n'
+	if runtime.GOOS == "windows" {
+		SEP = "\r"
+		BIT_SEP = '\r'
+	}
 	reader := bufio.NewReader(os.Stdin)
+	input, err := reader.ReadString(byte(BIT_SEP))
+	if err != nil {
+		panic(err)
+	}
+	inputClean := strings.ReplaceAll(input, SEP, "")
+	return inputClean
+}
+
+func single() {
+
 	fmt.Print("Enter Manga Url/ID to Check: ")
-	Url, _ := reader.ReadString('\n')
-	UrlClean := strings.ReplaceAll(Url, "\n", "")
+	UrlClean := askinput()
+	fmt.Printf("%x", UrlClean)
 	// sample url https://www.mangaworld.cc/manga/1807/murim-login/
 	var id int64
 	for _, idFind := range strings.Split(UrlClean, "/") {
@@ -86,12 +96,11 @@ func single() {
 	fmt.Println("Info: Anime id = " + strconv.Itoa(int(id)))
 	mangasaved, err := GetManga(int(id))
 	if err != nil {
-		println(err.Error())
+		panic(err.Error())
 	}
-	fmt.Println("Selected: "+mangasaved.Title)
+	fmt.Println("Selected: " + mangasaved.Title)
 	fmt.Print("0 for single 1 for whole: ")
-	whole, _ := reader.ReadString('\n')
-	wholecl := strings.ReplaceAll(whole, "\n", "")
+	wholecl := askinput()
 	if wholecl == "0" {
 		if len(mangasaved.Pages.Volumes) > 0 {
 			fmt.Println("Pick: What Volume You wanna add/update? ")
@@ -103,8 +112,7 @@ func single() {
 				println(index, ")    PickOption: Volume "+volume.Volume.Name)
 				aviableVolumes = append(aviableVolumes, volume)
 			}
-			pick, _ := reader.ReadString('\n')
-			pickClean, _ := strconv.Atoi(strings.ReplaceAll(pick, "\n", ""))
+			pickClean, _ := strconv.Atoi(askinput())
 			selectedVolume := aviableVolumes[pickClean]
 			fmt.Println("Pick: What Chapter You wanna add/update? ")
 			var aviableChapters []Chapter
@@ -112,8 +120,8 @@ func single() {
 				println(index, ")  PickOption: Chapters "+chapter.Name)
 				aviableChapters = append(aviableChapters, chapter)
 			}
-			pick, _ = reader.ReadString('\n')
-			pickClean, _ = strconv.Atoi(strings.ReplaceAll(pick, "\n", ""))
+
+			pickClean, _ = strconv.Atoi(askinput())
 			selectedChapter := aviableChapters[pickClean]
 			fmt.Println("Starting Chapter Download")
 			DownloadChapter(selectedChapter, selectedVolume.Volume, mangasaved)
@@ -125,8 +133,8 @@ func single() {
 				println(index, ")  PickOption: Chapters "+chapter.Name)
 				aviableChapters = append(aviableChapters, chapter)
 			}
-			pick, _ := reader.ReadString('\n')
-			pickClean, _ := strconv.Atoi(strings.ReplaceAll(pick, "\n", ""))
+
+			pickClean, _ := strconv.Atoi(askinput())
 			selectedChapter := aviableChapters[pickClean]
 			fmt.Println("Starting Chapter Download")
 			DownloadChapterNoVolume(selectedChapter, mangasaved)
