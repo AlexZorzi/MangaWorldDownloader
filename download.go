@@ -14,7 +14,7 @@ import (
 )
 
 func DownloadManga(m Manga) {
-	// https://cdn.mangaworld.cc/chapters/blust-5fde5e956fe15b440d71d1c6/oneshot-5fde5ea093f7544385e33e4d/1.png
+	// https://cdn.mangaworld.io/chapters/blust-5fde5e956fe15b440d71d1c6/oneshot-5fde5ea093f7544385e33e4d/1.png
 	// 									 slugManga - idManga / slugChapther - idChapter / pageFilename
 	DownloadPreview(m)
 	// TODO: download Banner
@@ -33,7 +33,7 @@ func DownloadManga(m Manga) {
 func DownloadPreview(m Manga) {
 	PATH := filepath.FromSlash("./" + m.Slug + "/")
 	WG.Add(1)
-	go downloadWPath("https://cdn.mangaworld.cc"+m.Image, PATH, m.Slug+"."+strings.Split(m.Image, ".")[1])
+	go downloadWPath("https://cdn.mangaworld.io"+m.Image, PATH, m.Slug+"."+strings.Split(m.Image, ".")[1])
 }
 func DownloadChapterNoVolume(c Chapter, m Manga) {
 	WG.Wait()
@@ -50,7 +50,7 @@ func DownloadChapterNoVolume(c Chapter, m Manga) {
 	}
 	chapterNumber := fmt.Sprintf("%.1F", floatC)
 	for _, page := range c.Pages {
-		API := "https://cdn.mangaworld.cc/chapters/" + m.SlugFolder + "-" + m.ID + "/" + c.Slug + "-" + c.ID + "/" + page
+		API := "https://cdn.mangaworld.io/chapters/" + m.SlugFolder + "-" + m.ID + "/" + c.Slug + "-" + c.ID + "/" + page
 		PATH := filepath.FromSlash("./" + m.Slug + "/chapter " + chapterNumber + "/")
 		WG.Add(1)
 		go downloadWPath(API, PATH, page)
@@ -70,7 +70,7 @@ func DownloadChapter(c Chapter, v Volume, m Manga) {
 	chapterNumber := fmt.Sprintf("%.1F", floatC)
 	WG.Wait()
 	for _, page := range c.Pages {
-		API := "https://cdn.mangaworld.cc/chapters/" + m.SlugFolder + "-" + m.ID + "/" + v.Slug + "-" + v.ID + "/" + c.Slug + "-" + c.ID + "/" + page
+		API := "https://cdn.mangaworld.io/chapters/" + m.SlugFolder + "-" + m.ID + "/" + v.Slug + "-" + v.ID + "/" + c.Slug + "-" + c.ID + "/" + page
 		PATH := filepath.FromSlash("./" + m.Slug + "/volume " + volumeNumber + "/chapter " + chapterNumber + "/")
 		WG.Add(1)
 		go downloadWPath(API, PATH, page)
@@ -159,6 +159,6 @@ func ChangeUserAgent() {
 	USERAGENT = useragentnew
 }
 
-func SaveCookies()  {
+func SaveCookies() {
 	ioutil.WriteFile("cred.json", []byte("{\n \"useragent\":\""+USERAGENT+"\", \n \"cf_clearance\":\""+COOKIE+"\" \n}"), 0755)
 }

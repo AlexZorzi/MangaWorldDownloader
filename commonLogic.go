@@ -14,19 +14,11 @@ func Contains(s []int, ID int) bool {
 	return false
 }
 
-func Between(value string, a string, b string) string {
-	// Get substring between two strings.
-	posFirst := strings.Index(value, a)
-	if posFirst == -1 {
-		return ""
+func Between(str string, before string, after string) string {
+	a := strings.SplitAfterN(str, before, 2)
+	b := strings.SplitAfterN(a[len(a)-1], after, 2)
+	if 1 == len(b) {
+		return b[0]
 	}
-	posLast := strings.Index(value, b)
-	if posLast == -1 {
-		return ""
-	}
-	posFirstAdjusted := posFirst + len(a)
-	if posFirstAdjusted >= posLast {
-		return ""
-	}
-	return value[posFirstAdjusted:posLast]
+	return b[0][0 : len(b[0])-len(after)]
 }

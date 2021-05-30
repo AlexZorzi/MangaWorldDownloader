@@ -39,7 +39,7 @@ func main() {
 
 func getCred() {
 
-	code, err := GetWebPage("https://www.mangaworld.cc/")
+	code, err := GetWebPage("https://www.mangaworld.io/")
 	if err == nil {
 		if code.StatusCode == 200 {
 			return
@@ -80,7 +80,7 @@ func single() {
 	fmt.Print("Enter Manga Url/ID to Check: ")
 	UrlClean := askinput()
 	fmt.Printf("%x", UrlClean)
-	// sample url https://www.mangaworld.cc/manga/1807/murim-login/
+	// sample url https://www.mangaworld.io/manga/1807/murim-login/
 	var id int64
 	for _, idFind := range strings.Split(UrlClean, "/") {
 		idInt, err := strconv.ParseInt(idFind, 10, 64)

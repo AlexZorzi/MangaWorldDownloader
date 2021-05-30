@@ -1,6 +1,6 @@
 # MangaWorld Downloader 
-Un Downloader Per mangaworld.cc,
-progetto a scopo didattico non affiliato a mangaworld.cc, non sono responsabile dell'utilizzo e delle immagini hostate su mangaworld.cc
+Un Downloader Per mangaworld.io,
+progetto a scopo didattico non affiliato a mangaworld.io, non sono responsabile dell'utilizzo e delle immagini hostate su mangaworld.io
 
 [EN Translation](README.md)
 [DE Translation](README_DE.md)
@@ -13,7 +13,7 @@ progetto a scopo didattico non affiliato a mangaworld.cc, non sono responsabile 
 # In caso di un CloudFlare captcha
 Per passare il blocco il programma avrà bisogno del cookie cf_clearance e dell'useragent del browser che avete utilzzato per risolvere il captcha
 
-- Token: Risolvete il captcha su www.mangaworld.cc e in Dev Console prendete il valore del cookie cf_clearance 
+- Token: Risolvete il captcha su www.mangaworld.io e in Dev Console prendete il valore del cookie cf_clearance 
   ![Token](https://i.imgur.com/HYUu0M0.png)
   
 - UserAgent: Al sito www.whatsmyua.info è possibile vedere il proprio useragent
