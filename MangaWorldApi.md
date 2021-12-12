@@ -1,6 +1,6 @@
 # Pagina Archivio
 Json Sono caricati in pagina tra '.concat(' & ') \<script>'
-https://www.mangaworld.io/archive?page=1
+https://www.mangaworld.in/archive?page=1
 
 Questa è la struttura importante
  ``` 
@@ -65,9 +65,9 @@ Questa è la struttura importante
 
 # Pagina Manga
 si trova sempre nello stesso punto nel file html del precedente
-https://www.mangaworld.io/manga/2070/onii-chan-is-done-for
+https://www.mangaworld.in/manga/2070/onii-chan-is-done-for
 la pagina dei manga può essere vista anche così
-https://www.mangaworld.io/manga/`numero id` quindi può essere ottenuto ciclando da 170 a 2332 (ultimo attuale). così da saltare le query all archivio
+https://www.mangaworld.in/manga/`numero id` quindi può essere ottenuto ciclando da 170 a 2332 (ultimo attuale). così da saltare le query all archivio
 
 ```
 "o":

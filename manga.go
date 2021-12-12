@@ -54,7 +54,7 @@ func bufToJson(response *http.Response) []byte {
 }
 
 func GetLatestMangaIndex() int64 {
-	url := "https://www.mangaworld.io/"
+	url := "https://www.mangaworld.in/"
 	var latest int64
 	for {
 		resp, err := GetWebPage(url)
@@ -76,7 +76,7 @@ func GetLatestMangaIndex() int64 {
 }
 
 func GetManga(ID int) (Manga, error) {
-	url := "https://www.mangaworld.io/manga/" + strconv.Itoa(ID)
+	url := "https://www.mangaworld.in/manga/" + strconv.Itoa(ID)
 	var mangadata []byte
 	var readdata []byte
 	for {
