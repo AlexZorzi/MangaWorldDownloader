@@ -33,7 +33,7 @@ func DownloadManga(m Manga) {
 func DownloadPreview(m Manga) {
 	PATH := filepath.FromSlash("./" + m.Slug + "/")
 	WG.Add(1)
-	go downloadWPath("https://cdn.mangaworld.in"+m.Image, PATH, m.Slug+"."+strings.Split(m.Image, ".")[1])
+	go downloadWPath("https://cdn.mangaworld.bz"+m.Image, PATH, m.Slug+"."+strings.Split(m.Image, ".")[1])
 }
 func DownloadChapterNoVolume(c Chapter, m Manga) {
 	WG.Wait()
@@ -50,7 +50,7 @@ func DownloadChapterNoVolume(c Chapter, m Manga) {
 	}
 	chapterNumber := fmt.Sprintf("%.1F", floatC)
 	for _, page := range c.Pages {
-		API := "https://cdn.mangaworld.in/chapters/" + m.SlugFolder + "-" + m.ID + "/" + c.Slug + "-" + c.ID + "/" + page
+		API := "https://cdn.mangaworld.bz/chapters/" + m.SlugFolder + "-" + m.ID + "/" + c.Slug + "-" + c.ID + "/" + page
 		PATH := filepath.FromSlash("./" + m.Slug + "/chapter " + chapterNumber + "/")
 		WG.Add(1)
 		go downloadWPath(API, PATH, page)
@@ -70,7 +70,7 @@ func DownloadChapter(c Chapter, v Volume, m Manga) {
 	chapterNumber := fmt.Sprintf("%.1F", floatC)
 	WG.Wait()
 	for _, page := range c.Pages {
-		API := "https://cdn.mangaworld.in/chapters/" + m.SlugFolder + "-" + m.ID + "/" + v.Slug + "-" + v.ID + "/" + c.Slug + "-" + c.ID + "/" + page
+		API := "https://cdn.mangaworld.bz/chapters/" + m.SlugFolder + "-" + m.ID + "/" + v.Slug + "-" + v.ID + "/" + c.Slug + "-" + c.ID + "/" + page
 		PATH := filepath.FromSlash("./" + m.Slug + "/volume " + volumeNumber + "/chapter " + chapterNumber + "/")
 		WG.Add(1)
 		go downloadWPath(API, PATH, page)
