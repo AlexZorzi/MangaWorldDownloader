@@ -1,6 +1,6 @@
 # MangaWorld Downloader 
-A Downloader For mangaworld.in,
-a project for educational purposes not affiliated with mangaworld.in, I am not responsible for the use and images hosted on mangaworld.in
+A Downloader For mangaworld.ac,
+a project for educational purposes not affiliated with mangaworld.ac, I am not responsible for the use and images hosted on mangaworld.ac
 
 [IT Translation](README_IT.md)
 [DE Translation](README_DE.md)
@@ -13,10 +13,10 @@ a project for educational purposes not affiliated with mangaworld.in, I am not r
 # In case of a CloudFlare captcha
 To pass the block the program needs the cf_clearance cookie and the useragent of the browser you used to solve the captcha
 
-- Token: Solve the captcha on www.mangaworld.in and in Dev Console get the value of the cf_clearance cookie
+- Token: Solve the captcha on www.mangaworld.ac and in Dev Console get the value of the cf_clearance cookie
   ![Token](https://i.imgur.com/HYUu0M0.png)
 
-- UserAgent: At www.whatsmyua.info you can see your useragent
+- UserAgent: At www.whatsmyua.acfo you can see your useragent
   ![Useragent](https://i.imgur.com/nZZfCt1.png)
 
 the program will automatically ask you for these two parameters if it needs them, then it will automatically save them in a JSON file so you can use them

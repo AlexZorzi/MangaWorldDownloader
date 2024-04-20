@@ -1,6 +1,6 @@
 # MangaWorld Downloader 
-Ein Downloader für mangaworld.in,
-dies ist ein Projekt für Bildungszwecke, das nicht mit mangaworld.in verbunden ist. Ich bin nicht für die Nutzung und die Bilder auf mangaworld.in verantwortlich.
+Ein Downloader für mangaworld.ac,
+dies ist ein Projekt für Bildungszwecke, das nicht mit mangaworld.ac verbunden ist. Ich bin nicht für die Nutzung und die Bilder auf mangaworld.ac verantwortlich.
 
 [IT Übersetzung](README_IT.md)
 [EN Übersetzung](README.md)
@@ -13,10 +13,10 @@ dies ist ein Projekt für Bildungszwecke, das nicht mit mangaworld.in verbunden 
 # Im Falle eines CloudFlare-Captchas
 Um die Sperre zu umgehen, benötigt das Programm das cf_clearance-Cookie und den User-Agent des Browsers, den Sie zum Lösen des Captchas verwendet haben.
 
-- Token: Lösen Sie das Captcha auf www.mangaworld.in und ermitteln Sie in der Dev Console den Wert des cf_clearance-Cookies
+- Token: Lösen Sie das Captcha auf www.mangaworld.ac und ermitteln Sie in der Dev Console den Wert des cf_clearance-Cookies
   ![Token](https://i.imgur.com/HYUu0M0.png)
 
-- BenutzerAgent: Unter www.whatsmyua.info können Sie Ihren UserAgent sehen
+- BenutzerAgent: Unter www.whatsmyua.acfo können Sie Ihren UserAgent sehen
   ![Useragent](https://i.imgur.com/nZZfCt1.png)
 
 das Programm fragt Sie automatisch nach diesen beiden Parametern, wenn es sie braucht, und speichert sie dann automatisch in einer JSON-Datei, damit Sie sie
