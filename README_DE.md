@@ -16,7 +16,7 @@ Um die Sperre zu umgehen, benötigt das Programm das cf_clearance-Cookie und den
 - Token: Lösen Sie das Captcha auf www.mangaworld.ac und ermitteln Sie in der Dev Console den Wert des cf_clearance-Cookies
   ![Token](https://i.imgur.com/HYUu0M0.png)
 
-- BenutzerAgent: Unter www.whatsmyua.acfo können Sie Ihren UserAgent sehen
+- BenutzerAgent: Unter www.whatsmyua.info können Sie Ihren UserAgent sehen
   ![Useragent](https://i.imgur.com/nZZfCt1.png)
 
 das Programm fragt Sie automatisch nach diesen beiden Parametern, wenn es sie braucht, und speichert sie dann automatisch in einer JSON-Datei, damit Sie sie

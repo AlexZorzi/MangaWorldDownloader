@@ -21,7 +21,7 @@ Per passare il blocco il programma avrà bisogno del cookie cf_clearance e dell'
 - Token: Risolvete il captcha su www.mangaworld.ac e in Dev Console prendete il valore del cookie cf_clearance 
   ![Token](https://i.imgur.com/HYUu0M0.png)
   
-- UserAgent: Al sito www.whatsmyua.acfo è possibile vedere il proprio useragent
+- UserAgent: Al sito www.whatsmyua.info è possibile vedere il proprio useragent
   ![Useragent](https://i.imgur.com/nZZfCt1.png)
   
 il programma vi chiederà in automatico questi due parametri se ne avrà bisogno, poi li salverà in automatico in un file JSON così da poterli utilizzare 

@@ -16,7 +16,7 @@ To pass the block the program needs the cf_clearance cookie and the useragent of
 - Token: Solve the captcha on www.mangaworld.ac and in Dev Console get the value of the cf_clearance cookie
   ![Token](https://i.imgur.com/HYUu0M0.png)
 
-- UserAgent: At www.whatsmyua.acfo you can see your useragent
+- UserAgent: At www.whatsmyua.info you can see your useragent
   ![Useragent](https://i.imgur.com/nZZfCt1.png)
 
 the program will automatically ask you for these two parameters if it needs them, then it will automatically save them in a JSON file so you can use them
