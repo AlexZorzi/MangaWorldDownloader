@@ -19,3 +19,4 @@
 .idea
 pkg
 src
+build/
