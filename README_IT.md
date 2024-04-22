@@ -1,6 +1,6 @@
 # MangaWorld Downloader 
-Un Downloader Per mangaworld.in,
-progetto a scopo didattico non affiliato a mangaworld.in, non sono responsabile dell'utilizzo e delle immagini hostate su mangaworld.in
+Un Downloader Per mangaworld.ac,
+progetto a scopo didattico non affiliato a mangaworld.ac, non sono responsabile dell'utilizzo e delle immagini hostate su mangaworld.ac
 
 [EN Translation](README.md)
 [DE Translation](README_DE.md)
@@ -10,10 +10,15 @@ progetto a scopo didattico non affiliato a mangaworld.in, non sono responsabile 
 - MultiThreaded Download per scaricare le pagine alla massima velocità
 - Download della Preview
 
+# HowTo
+brew install go
+go build
+./MangaWorldDownloader
+
 # In caso di un CloudFlare captcha
 Per passare il blocco il programma avrà bisogno del cookie cf_clearance e dell'useragent del browser che avete utilzzato per risolvere il captcha
 
-- Token: Risolvete il captcha su www.mangaworld.in e in Dev Console prendete il valore del cookie cf_clearance 
+- Token: Risolvete il captcha su www.mangaworld.ac e in Dev Console prendete il valore del cookie cf_clearance 
   ![Token](https://i.imgur.com/HYUu0M0.png)
   
 - UserAgent: Al sito www.whatsmyua.info è possibile vedere il proprio useragent
